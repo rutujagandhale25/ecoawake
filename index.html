@@ -1,68 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EcoSpark | Small Acts, Big Impact</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoSpark - Small Acts, Big Impact</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-  <!-- ⚡ Eco-Awareness Quiz Modal -->
-<div id="quizModal" class="modal">
-  <div class="modal-content">
-    <span id="closeQuiz" class="close">&times;</span>
-    <h2>⚡ Lightning Eco-Awareness Quiz</h2>
-    <div id="quizBox"></div>
-  </div>
-</div>
-
-<!-- Link your script -->
-<script src="script.js"></script>
 <body>
+
   <header>
     <h1>🌿 EcoSpark</h1>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="learn.html">Learn & Tips</a>
-      <a href="join.html">Join Us</a>
-    </nav>
+    <p class="tagline">Small Acts, Big Impact</p>
   </header>
 
-  <section class="hero">
-    <h2>Small Acts, Big Impact</h2>
-    <p>EcoSpark is a student-led initiative promoting environmental awareness and sustainable living.
-       Through creative challenges, tips, and campaigns, we inspire small steps toward a greener planet.</p>
-    <button id="quizBtn">🧠 Take Eco-Awareness Quiz</button>
+  <section class="intro">
+    <h2>Welcome to EcoSpark</h2>
+    <p>EcoSpark is a student-driven initiative that inspires people to adopt sustainable living habits through fun challenges, quizzes, and eco-tips. Together, we can make small acts lead to a big impact!</p>
   </section>
 
-  <section class="cards">
-    <div class="card">
-      <h3>🌱 Challenge of the Month</h3>
-      <p>No-Plastic Week — refuse single-use plastics for seven days!</p>
-    </div>
-    <div class="card">
-      <h3>🌍 Small Acts, Big Impact</h3>
-      <p>Switch off unused lights, carry a cloth bag, and reuse bottles — little habits matter!</p>
-    </div>
-    <div class="card">
-      <h3>📸 Share Your Eco-Action</h3>
-      <input type="file" id="fileInput" accept="image/*" />
-      <div id="preview"></div>
-    </div>
+  <section class="main-buttons">
+    <button class="btn">🌱 Challenge of the Month</button>
+    <button class="btn">🌍 Small Acts, Big Impact</button>
+    <button id="quizBtn" class="btn">⚡ Take Eco-Awareness Quiz</button>
+    <button class="btn">📸 Share Your Eco Actions</button>
   </section>
 
-  <!-- Quiz Modal -->
+  <!-- ⚡ Modal Quiz -->
   <div id="quizModal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Eco-Awareness Word Quiz</h2>
+      <span id="closeQuiz" class="close">&times;</span>
+      <h2>⚡ Lightning Eco-Awareness Quiz</h2>
       <div id="quizBox"></div>
     </div>
   </div>
 
-  <footer>© 2025 EcoSpark | Small Acts, Big Impact</footer>
+  <footer>
+    <p>© 2025 EcoSpark | Small Acts, Big Impact 🌍</p>
+  </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
 
