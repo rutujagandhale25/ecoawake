@@ -1,73 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EcoSpark | Small Acts, Big Impact</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="logo">🌿 <span>EcoSpark</span></div>
+  <header>
+    <h1>🌿 EcoSpark</h1>
     <nav>
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
-      <a href="eco-tips.html">Learn & Tips</a>
-      <a href="contact.html">Join Us</a>
+      <a href="learn.html">Learn & Tips</a>
+      <a href="join.html">Join Us</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Small Acts, Big Impact</h1>
-    <p>Join the movement for a cleaner, greener tomorrow.</p>
-    <div class="buttons">
-      <button onclick="startQuiz()">🌎 Take Eco Awareness Quiz</button>
-      <a href="#upload" class="btn-secondary">📸 Share Your Eco Action</a>
+    <h2>Small Acts, Big Impact</h2>
+    <p>EcoSpark is a student-led initiative promoting environmental awareness and sustainable living.
+       Through creative challenges, tips, and campaigns, we inspire small steps toward a greener planet.</p>
+    <button id="quizBtn">🧠 Take Eco-Awareness Quiz</button>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>🌱 Challenge of the Month</h3>
+      <p>No-Plastic Week — refuse single-use plastics for seven days!</p>
+    </div>
+    <div class="card">
+      <h3>🌍 Small Acts, Big Impact</h3>
+      <p>Switch off unused lights, carry a cloth bag, and reuse bottles — little habits matter!</p>
+    </div>
+    <div class="card">
+      <h3>📸 Share Your Eco-Action</h3>
+      <input type="file" id="fileInput" accept="image/*" />
+      <div id="preview"></div>
     </div>
   </section>
 
-  <section class="section challenges">
-    <h2>🌿 Challenges of the Month</h2>
-    <div class="challenge-grid">
-      <div class="challenge-card">
-        <h3>♻️ No Plastic Week</h3>
-        <p>Say no to single-use plastics for one week! Bring your own bottle and bag.</p>
-      </div>
-      <div class="challenge-card">
-        <h3>🌳 Plant a Tree</h3>
-        <p>Plant one tree in your area. Take a photo and share it below!</p>
-      </div>
-      <div class="challenge-card">
-        <h3>💡 Power Hour</h3>
-        <p>Switch off unnecessary lights for one hour every day this week.</p>
-      </div>
-      <div class="challenge-card">
-        <h3>🚴‍♀️ Green Commute</h3>
-        <p>Use public transport, cycle, or walk instead of driving at least twice this week.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="upload" class="section upload">
-    <h2>📸 Upload Your Eco Action</h2>
-    <p>Show the world your green habits! Upload a photo of your eco-friendly act.</p>
-    <input type="file" id="fileInput" accept="image/*">
-    <div id="preview"></div>
-  </section>
-
-  <section class="section quiz" id="quizSection">
-    <div class="quiz-container">
-      <h2>Eco Awareness Quiz</h2>
+  <!-- Quiz Modal -->
+  <div id="quizModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Eco-Awareness Word Quiz</h2>
       <div id="quizBox"></div>
     </div>
-  </section>
+  </div>
 
-  <footer>
-    © 2025 EcoSpark | Small Acts, Big Impact
-  </footer>
+  <footer>© 2025 EcoSpark | Small Acts, Big Impact</footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-<script src="script.js"></script>
-
