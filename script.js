@@ -1,78 +1,59 @@
-// Elements
-const modal = document.getElementById("quizModal");
-const btn = document.getElementById("quizBtn");
-const span = document.getElementById("closeQuiz");
-const quizBox = document.getElementById("quizBox");
+// Quiz functionality
+const quizBtn = document.getElementById("quizBtn");
+const quizModal = document.getElementById("quizModal");
+const closeModal = document.getElementById("closeModal");
+const quizForm = document.getElementById("quizForm");
+const quizResult = document.getElementById("quizResult");
 
-// Open modal
-btn.onclick = function() {
-  modal.style.display = "block";
-  startMcqQuiz();
-};
-
-// Close modal
-span.onclick = function() {
-  modal.style.display = "none";
-};
-
-// Close when clicking outside modal
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
-// --- Lightning MCQ Quiz ---
-const mcqData = [
-  {
-    question: "Which of these is a renewable energy source?",
-    options: ["Coal", "Solar Power", "Petroleum", "Natural Gas"],
-    correct: 1
-  },
-  {
-    question: "What should you do to save water at home?",
-    options: ["Leave tap running", "Fix leaks", "Wash car daily", "Use more water"],
-    correct: 1
-  },
-  {
-    question: "Which material is biodegradable?",
-    options: ["Plastic bottle", "Glass jar", "Banana peel", "Aluminum can"],
-    correct: 2
-  }
-];
-
-let qIndex = 0;
-let points = 0;
-
-function startMcqQuiz() {
-  qIndex = 0;
-  points = 0;
-  showMcqQuestion();
+if (quizBtn) {
+  quizBtn.addEventListener("click", () => quizModal.style.display = "block");
+}
+if (closeModal) {
+  closeModal.addEventListener("click", () => quizModal.style.display = "none");
 }
 
-function showMcqQuestion() {
-  if (qIndex < mcqData.length) {
-    const q = mcqData[qIndex];
-    quizBox.innerHTML = `
-      <h3>${q.question}</h3>
-      ${q.options.map((opt, i) => `
-        <div class="quiz-option" onclick="selectMcq(${i})">${opt}</div>
-      `).join('')}
-    `;
-  } else {
-    quizBox.innerHTML = `
-      <h3>⚡ Lightning Round Complete!</h3>
-      <p>You got ${points} / ${mcqData.length} correct.</p>
-      <p>${points === 3 ? "🌿 Perfect! You're an Eco Genius!" : "💪 Keep improving — every small step counts!"}</p>
-      <button onclick="startMcqQuiz()">Play Again</button>
-    `;
-  }
+window.onclick = (e) => {
+  if (e.target == quizModal) quizModal.style.display = "none";
+};
+
+if (quizForm) {
+  quizForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const answers = { q1: "b", q2: "b", q3: "a" };
+    let score = 0;
+    for (let q in answers) {
+      const selected = document.querySelector(`input[name="${q}"]:checked`);
+      if (selected && selected.value === answers[q]) score++;
+    }
+    quizResult.innerText = `You scored ${score}/3 🌿`;
+  });
 }
 
-function selectMcq(i) {
-  if (i === mcqData[qIndex].correct) {
-    points++;
-  }
-  qIndex++;
-  showMcqQuestion();
+// Upload functionality
+const uploadBtn = document.getElementById("uploadBtn");
+const photoUpload = document.getElementById("photoUpload");
+const previewContainer = document.getElementById("previewContainer");
+
+if (uploadBtn) {
+  uploadBtn.addEventListener("click", () => {
+    const file = photoUpload.files[0];
+    if (!file) return alert("Please select a photo first!");
+    const reader = new FileReader();
+    reader.onload = () => {
+      previewContainer.innerHTML = `<img src="${reader.result}" alt="Eco Action">`;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+// Contact Form
+const contactForm = document.getElementById("contactForm");
+const formMsg = document.getElementById("formMsg");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    formMsg.innerText = "Thank you for joining EcoSpark! 🌿";
+    contactForm.reset();
+  });
 }
