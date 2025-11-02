@@ -1,144 +1,103 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
-  background: #f5fff7;
-  color: #053b06;
-  overflow-x: hidden;
+  background: #f3fff4;
+  color: #064406;
 }
 
 header {
-  background: #1c7c30;
+  background: #1b7c36;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 5%;
-  position: sticky;
-  top: 0;
+  padding: 10px 5%;
 }
 
-header nav a {
+nav a {
   color: white;
   margin: 0 10px;
   text-decoration: none;
-  font-weight: 500;
 }
-header nav a.active,
-header nav a:hover {
-  border-bottom: 2px solid #fff;
-}
-
-.logo span {
-  font-size: 1.4rem;
-  font-weight: bold;
+nav a.active, nav a:hover {
+  text-decoration: underline;
 }
 
 .hero {
   text-align: center;
-  background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=60') center/cover;
+  padding: 60px 15px;
+  background: linear-gradient(#1b7c36, #43a047);
   color: white;
-  padding: 100px 20px;
-  background-attachment: fixed;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.hero .buttons {
-  margin-top: 20px;
-}
-
-.hero button,
-.btn-secondary {
-  background: #2ecc71;
-  border: none;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: 0.3s;
-  text-decoration: none;
-}
-
-.hero button:hover,
-.btn-secondary:hover {
-  background: #27ae60;
-  transform: scale(1.05);
-}
-
-.section {
-  padding: 60px 10%;
-  text-align: center;
-}
-
-.challenge-grid {
+.cards, .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  margin-top: 20px;
+  padding: 30px 5%;
 }
 
-.challenge-card {
+.card, .tip {
   background: white;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
-
-.challenge-card:hover {
-  transform: translateY(-6px);
-}
-
-#upload input {
-  margin-top: 10px;
-  background: white;
-  padding: 8px;
-  border-radius: 6px;
-}
-
-#preview img {
-  margin-top: 20px;
-  max-width: 90%;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+.card:hover, .tip:hover {
+  transform: translateY(-5px);
 }
 
 footer {
-  background: #1c7c30;
+  background: #1b7c36;
   color: white;
   text-align: center;
   padding: 15px 0;
-  margin-top: 40px;
 }
 
-/* Quiz styling */
-.quiz-container {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.join form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 400px;
+  margin: auto;
 }
-
-.quiz-container h2 {
-  color: #1c7c30;
-}
-
-.quiz-option {
-  display: block;
-  background: #eafbe7;
+.join input, .join textarea, .join button {
+  margin: 10px 0;
   padding: 10px;
-  margin: 8px 0;
-  border-radius: 8px;
+  border-radius: 6px;
+  border: none;
+}
+.join button {
+  background: #1b7c36;
+  color: white;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.quiz-option:hover {
-  background: #c7f5c0;
+/* modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+}
+.close {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+#preview img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
 }
