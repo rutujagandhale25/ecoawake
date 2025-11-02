@@ -3,12 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About – EcoAwake</title>
+  <title>About EcoAwake</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5fff5;
+      margin: 0;
+      color: #2e4d2e;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #3fa34d;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+
+    .mission {
+      background-color: #e9f7ef;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #3fa34d;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #2c7a39;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #2e4f2e;
+      color: white;
+      margin-top: 30px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body style="font-family:Arial; background:#eaf7ea; color:#2e4f2e;">
-  <h1>About EcoAwake</h1>
-  <p><a href="index.html">← Back to Home</a></p>
-  <p>EcoAwake is a digital awareness initiative developed as part of a college entrepreneurship project. Our goal is to inspire people to live sustainably, reduce waste, and take part in eco-friendly initiatives.</p>
-  <p>We believe that small actions by many individuals can lead to a big positive impact on our planet.</p>
+<body>
+  <header>
+    <h1>EcoAwake</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="eco-tips.html">Eco Tips</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section>
+    <h1>About EcoAwake</h1>
+    <p>
+      <b>EcoAwake</b> is a digital awareness initiative created as part of a college entrepreneurship project. 
+      Our mission is to inspire individuals to adopt sustainable habits, protect natural resources, 
+      and create a positive environmental impact through small, consistent actions.
+    </p>
+
+    <div class="mission">
+      <h3>🌱 Our Mission</h3>
+      <p>
+        We aim to awaken environmental consciousness in young minds, motivate communities to take 
+        climate-friendly actions, and encourage innovation in green living. 
+        Through this project, we promote education, action, and collaboration toward a cleaner planet.
+      </p>
+    </div>
+
+    <a href="eco-tips.html" class="btn">Explore Eco Tips</a>
+  </section>
+
+  <footer>
+    <p>© 2025 EcoAwake | Built with purpose and passion 💚</p>
+  </footer>
 </body>
 </html>
