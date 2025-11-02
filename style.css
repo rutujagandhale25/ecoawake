@@ -1,107 +1,46 @@
 body {
   font-family: "Poppins", sans-serif;
+  background: #f0fff0;
   margin: 0;
-  background: #f3fff4;
-  color: #064406;
+  color: #155724;
+  text-align: center;
 }
 
 header {
-  background: #1b7c36;
+  background: linear-gradient(135deg, #2e8b57, #3cb371);
   color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 5%;
+  padding: 30px 10px;
 }
 
-nav a {
+.tagline {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.intro {
+  max-width: 700px;
+  margin: 40px auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.main-buttons .btn {
+  background: #4CAF50;
   color: white;
-  margin: 0 10px;
-  text-decoration: none;
-}
-nav a.active, nav a:hover {
-  text-decoration: underline;
-}
-
-.hero {
-  text-align: center;
-  padding: 60px 15px;
-  background: linear-gradient(#1b7c36, #43a047);
-  color: white;
-}
-
-.cards, .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 30px 5%;
-}
-
-.card, .tip {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: none;
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
   transition: 0.3s;
 }
-.card:hover, .tip:hover {
-  transform: translateY(-5px);
+.main-buttons .btn:hover {
+  background: #45a049;
+  transform: scale(1.05);
 }
 
-footer {
-  background: #1b7c36;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-}
-
-.join form {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  max-width: 400px;
-  margin: auto;
-}
-.join input, .join textarea, .join button {
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-}
-.join button {
-  background: #1b7c36;
-  color: white;
-  cursor: pointer;
-}
-
-/* modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7);
-}
-.modal-content {
-  background: #fff;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 500px;
-}
-.close {
-  float: right;
-  font-size: 22px;
-  cursor: pointer;
-}
-#preview img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-/* --- Modal Quiz Style --- */
+/* Modal Quiz Style */
 .modal {
   display: none;
   position: fixed;
@@ -147,4 +86,3 @@ footer {
   background: #bdf5be;
   transform: scale(1.03);
 }
-
