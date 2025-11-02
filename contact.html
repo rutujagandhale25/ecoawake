@@ -1,22 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact – EcoAwake</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — EcoSpark</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body style="font-family:Arial; background:#eaf7ea; color:#2e4f2e;">
-  <h1>Contact Us</h1>
-  <p><a href="index.html">← Back to Home</a></p>
-  <p>Join our campaign or send feedback:</p>
-  <form>
-    <label>Name:</label><br>
-    <input type="text" placeholder="Your name"><br><br>
-    <label>Email:</label><br>
-    <input type="email" placeholder="Your email"><br><br>
-    <label>Message:</label><br>
-    <textarea placeholder="Your message"></textarea><br><br>
-    <button type="submit">Send</button>
-  </form>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1 class="brand">EcoSpark</h1>
+        <p class="tagline">Small Acts, Big Impact</p>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="eco-tips.html">Eco Tips</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="contact-card">
+      <h2>Join the Campaign / Share Your Actions</h2>
+      <p>Use this form to send feedback, sign up for local drives, or upload a photo of an eco-action.</p>
+
+      <form id="contact-form">
+        <label>Name</label>
+        <input type="text" id="name" placeholder="Your name" required>
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Your email" required>
+
+        <label>Message</label>
+        <textarea id="message" rows="4" placeholder="Tell us what you'd like to do"></textarea>
+
+        <label>Upload a photo (optional)</label>
+        <input type="file" id="photo" accept="image/*">
+        <div id="preview" class="img-preview" hidden></div>
+
+        <div style="margin-top:12px;">
+          <button type="submit" class="btn">Send</button>
+          <button type="button" id="clear-form" class="btn ghost">Clear</button>
+        </div>
+        <p class="small" style="margin-top:10px;">Note: This form uses client-side preview only; to accept files in a real site you'd need a server or service.</p>
+      </form>
+
+      <div id="form-msg" hidden class="form-msg"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 EcoSpark | “Small Acts, Big Impact”</p>
+    </div>
+  </footer>
+
+  <script>
+    // client-side file preview & simple form handler (no backend)
+    const photoInput = document.getElementById('photo');
+    const preview = document.getElementById('preview');
+    photoInput.addEventListener('change', () => {
+      const file = photoInput.files[0];
+      if (!file) { preview.hidden = true; preview.innerHTML = ''; return; }
+      const reader = new FileReader();
+      reader.onload = e => {
+        preview.hidden = false;
+        preview.innerHTML = `<img src="${e.target.result}" alt="preview" style="max-width:100%;border-radius:8px;">`;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      // simple success message (for demonstration)
+      document.getElementById('form-msg').hidden = false;
+      document.getElementById('form-msg').innerHTML = '<p>Thank you! Your message has been noted (demo mode).</p>';
+      // clear form after submit
+      e.target.reset();
+      preview.hidden = true;
+      preview.innerHTML = '';
+    });
+
+    document.getElementById('clear-form').addEventListener('click', () => {
+      document.getElementById('contact-form').reset();
+      preview.hidden = true;
+      preview.innerHTML = '';
+      document.getElementById('form-msg').hidden = true;
+    });
+  </script>
 </body>
 </html>
