@@ -1,3 +1,27 @@
+// Get elements
+const modal = document.getElementById("quizModal");
+const btn = document.getElementById("quizBtn");
+const span = document.getElementById("closeQuiz");
+const quizBox = document.getElementById("quizBox");
+
+// Open modal when button clicked
+btn.onclick = function() {
+  modal.style.display = "block";
+  startMcqQuiz();
+}
+
+// Close modal when X clicked
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Close modal when clicked outside
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
 // --- Lightning MCQ Quiz ---
 const mcqData = [
   {
@@ -27,7 +51,6 @@ function startMcqQuiz() {
 }
 
 function showMcqQuestion() {
-  const quizBox = document.getElementById("quizBox");
   if (qIndex < mcqData.length) {
     const q = mcqData[qIndex];
     quizBox.innerHTML = `
@@ -53,9 +76,3 @@ function selectMcq(i) {
   qIndex++;
   showMcqQuestion();
 }
-
-// Call this when modal opens
-btn.onclick = () => {
-  modal.style.display = "block";
-  startMcqQuiz();
-};
