@@ -1,159 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>EcoSpark — Small Acts, Big Impact</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoSpark | Small Acts, Big Impact</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div>
-        <h1 class="brand">EcoSpark</h1>
-        <p class="tagline">Small Acts, Big Impact</p>
-      </div>
-      <nav class="main-nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="eco-tips.html">Eco Tips</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
+  <header class="header">
+    <div class="logo">🌿 <span>EcoSpark</span></div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="eco-tips.html">Learn & Tips</a>
+      <a href="contact.html">Join Us</a>
+    </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <h2>Join the movement for a cleaner, greener tomorrow</h2>
-        <p class="lead">EcoSpark is a student-led initiative to spread awareness and inspire action — small acts by many people create big impact.</p>
-        <div class="hero-actions">
-          <a href="eco-tips.html" class="btn">Start Your Green Journey</a>
-          <button id="open-quiz" class="btn ghost">Take a Quick Quiz</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="container features">
-      <h3>What We Do</h3>
-      <div class="cards">
-        <article class="card">
-          <h4>Learn</h4>
-          <p>Articles, videos and facts about climate change and eco-friendly living to educate and inform.</p>
-        </article>
-
-        <article class="card">
-          <h4>Challenges</h4>
-          <p>Monthly eco-challenges like “No Plastic Week” or “Plant a Tree Day” to encourage real action.</p>
-        </article>
-
-        <article class="card">
-          <h4>Share</h4>
-          <p>Upload photos of your personal eco-actions and inspire others in the community.</p>
-        </article>
-
-        <article class="card">
-          <h4>Resources</h4>
-          <p>Practical tips, DIY projects, and educational tools to make green living easy.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="container campaign">
-      <h3>Campaign Activities</h3>
-      <ul class="campaign-list">
-        <li>Tree plantation drives</li>
-        <li>Beach / park clean-ups</li>
-        <li>Online eco-quiz and contests</li>
-        <li>Awareness posters and short reels on social media</li>
-        <li>Collaboration with schools and NGOs</li>
-      </ul>
-    </section>
-
-    <section class="container outcomes">
-      <h3>Expected Outcomes</h3>
-      <div class="outcome-list">
-        <p>• Increased awareness among students and youth.</p>
-        <p>• Adoption of sustainable practices in daily life.</p>
-        <p>• Reduction in plastic and waste usage.</p>
-        <p>• Community participation and long-term eco habits.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 EcoSpark | “Small Acts, Big Impact”</p>
-      <p class="small">Built for a college entrepreneurship project</p>
+  <section class="hero">
+    <h1>Small Acts, Big Impact</h1>
+    <p>Join the movement for a cleaner, greener tomorrow.</p>
+    <div class="buttons">
+      <button onclick="startQuiz()">🌎 Take Eco Awareness Quiz</button>
+      <a href="#upload" class="btn-secondary">📸 Share Your Eco Action</a>
     </div>
+  </section>
+
+  <section class="section challenges">
+    <h2>🌿 Challenges of the Month</h2>
+    <div class="challenge-grid">
+      <div class="challenge-card">
+        <h3>♻️ No Plastic Week</h3>
+        <p>Say no to single-use plastics for one week! Bring your own bottle and bag.</p>
+      </div>
+      <div class="challenge-card">
+        <h3>🌳 Plant a Tree</h3>
+        <p>Plant one tree in your area. Take a photo and share it below!</p>
+      </div>
+      <div class="challenge-card">
+        <h3>💡 Power Hour</h3>
+        <p>Switch off unnecessary lights for one hour every day this week.</p>
+      </div>
+      <div class="challenge-card">
+        <h3>🚴‍♀️ Green Commute</h3>
+        <p>Use public transport, cycle, or walk instead of driving at least twice this week.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="upload" class="section upload">
+    <h2>📸 Upload Your Eco Action</h2>
+    <p>Show the world your green habits! Upload a photo of your eco-friendly act.</p>
+    <input type="file" id="fileInput" accept="image/*">
+    <div id="preview"></div>
+  </section>
+
+  <section class="section quiz" id="quizSection">
+    <div class="quiz-container">
+      <h2>Eco Awareness Quiz</h2>
+      <div id="quizBox"></div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 EcoSpark | Small Acts, Big Impact
   </footer>
 
-  <!-- Quiz & small JS for interactivity -->
-  <div id="quiz-modal" class="modal" aria-hidden="true">
-    <div class="modal-dialog">
-      <button class="modal-close" id="close-quiz">&times;</button>
-      <h4>EcoQuiz — Quick 3 Question Check</h4>
-      <form id="quiz-form">
-        <ol>
-          <li>
-            How often should you reuse or avoid single-use plastic?
-            <div><label><input type="radio" name="q1" value="correct"> Always/Whenever possible</label></div>
-            <div><label><input type="radio" name="q1" value="wrong"> Only sometimes</label></div>
-          </li>
-          <li>
-            Which action saves energy at home?
-            <div><label><input type="radio" name="q2" value="correct"> Switching off unused lights & unplugging chargers</label></div>
-            <div><label><input type="radio" name="q2" value="wrong"> Keeping appliances on standby</label></div>
-          </li>
-          <li>
-            Best way to reduce food waste?
-            <div><label><input type="radio" name="q3" value="correct"> Plan meals and store leftovers</label></div>
-            <div><label><input type="radio" name="q3" value="wrong"> Throw it away quickly</label></div>
-          </li>
-        </ol>
-        <div class="modal-actions">
-          <button type="submit" class="btn">Submit</button>
-        </div>
-      </form>
-      <div id="quiz-result" class="quiz-result" hidden></div>
-    </div>
-  </div>
-
-  <script>
-    // modal quiz handlers
-    const openQuizBtn = document.getElementById('open-quiz');
-    const quizModal = document.getElementById('quiz-modal');
-    const closeQuizBtn = document.getElementById('close-quiz');
-    openQuizBtn.addEventListener('click', () => {
-      quizModal.style.display = 'block';
-      quizModal.setAttribute('aria-hidden', 'false');
-    });
-    closeQuizBtn.addEventListener('click', () => {
-      quizModal.style.display = 'none';
-      quizModal.setAttribute('aria-hidden', 'true');
-      document.getElementById('quiz-result').hidden = true;
-      document.getElementById('quiz-form').hidden = false;
-    });
-
-    document.getElementById('quiz-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      let score = 0;
-      if (document.querySelector('input[name="q1"]:checked')?.value === 'correct') score++;
-      if (document.querySelector('input[name="q2"]:checked')?.value === 'correct') score++;
-      if (document.querySelector('input[name="q3"]:checked')?.value === 'correct') score++;
-      const resultDiv = document.getElementById('quiz-result');
-      resultDiv.hidden = false;
-      resultDiv.innerHTML = `<p>You scored ${score}/3. ${score === 3 ? 'Awesome! Keep it up.' : 'Good try — practice these habits!'}</p>`;
-      document.getElementById('quiz-form').hidden = true;
-    });
-
-    // close modal when clicking outside dialog
-    window.addEventListener('click', (e) => {
-      if (e.target === quizModal) {
-        quizModal.style.display = 'none';
-        quizModal.setAttribute('aria-hidden', 'true');
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
