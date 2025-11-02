@@ -1,26 +1,26 @@
-// Get elements
+// Elements
 const modal = document.getElementById("quizModal");
 const btn = document.getElementById("quizBtn");
 const span = document.getElementById("closeQuiz");
 const quizBox = document.getElementById("quizBox");
 
-// Open modal when button clicked
+// Open modal
 btn.onclick = function() {
   modal.style.display = "block";
   startMcqQuiz();
-}
+};
 
-// Close modal when X clicked
+// Close modal
 span.onclick = function() {
   modal.style.display = "none";
-}
+};
 
-// Close modal when clicked outside
+// Close when clicking outside modal
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
 
 // --- Lightning MCQ Quiz ---
 const mcqData = [
