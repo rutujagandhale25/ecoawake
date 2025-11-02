@@ -3,41 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoAwake – Save the Planet</title>
+  <title>EcoAwake – Be the Change for a Greener Tomorrow</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #eaf7ea;
-      color: #2e4f2e;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
+      background-color: #f5fff5;
+      color: #2e4f2e;
+      overflow-x: hidden;
     }
+
     header {
       background-color: #3fa34d;
       color: white;
       padding: 20px;
       text-align: center;
     }
+
     nav a {
-      margin: 10px;
-      text-decoration: none;
       color: white;
+      margin: 0 12px;
+      text-decoration: none;
       font-weight: bold;
     }
-    section {
-      padding: 20px;
+
+    nav a:hover {
+      text-decoration: underline;
     }
+
+    .hero {
+      background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      margin-top: 15px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      background-color: #3fa34d;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #2c7a39;
+    }
+
+    .section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .section h2 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 25px;
+      width: 250px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #3fa34d;
+    }
+
     footer {
       background-color: #2e4f2e;
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🌿 EcoAwake</h1>
-    <p>Awakening a Greener Future</p>
+    <h1>EcoAwake</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -46,15 +129,39 @@
     </nav>
   </header>
 
-  <section>
-    <h2>Welcome to EcoAwake</h2>
-    <p>EcoAwake is a platform that spreads awareness about sustainable living and environmental protection. Join us in creating a cleaner, greener world.</p>
-    <h3>💡 Daily Eco Tip</h3>
-    <p>Switch off lights when not in use — small steps make a big difference!</p>
-  </section>
+  <div class="hero">
+    <h1>Welcome to EcoAwake</h1>
+    <p>EcoAwake is a movement towards sustainable living and environmental protection. Together, we can create a cleaner, greener world.</p>
+    <a href="eco-tips.html" class="btn">Start Your Green Journey</a>
+  </div>
+
+  <div class="section">
+    <h2>Our Focus Areas 🌍</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>♻️ Reduce Waste</h3>
+        <p>Encouraging recycling, upcycling, and mindful consumption habits to minimize waste in our environment.</p>
+      </div>
+      <div class="card">
+        <h3>💧 Save Resources</h3>
+        <p>Promoting water conservation, energy efficiency, and responsible usage of natural resources.</p>
+      </div>
+      <div class="card">
+        <h3>🌱 Grow Green</h3>
+        <p>Supporting tree-planting initiatives and spreading awareness about sustainable agriculture and gardening.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="background-color:#e9f7ef;">
+    <h2>Get Involved 💚</h2>
+    <p>Join us in our mission to make the world a cleaner and greener place. Every small step counts!</p>
+    <a href="about.html" class="btn">Learn More</a>
+  </div>
 
   <footer>
-    <p>© 2025 EcoAwake | College Entrepreneurship Project</p>
+    <p>© 2025 EcoAwake | Together for a Sustainable Future</p>
   </footer>
 </body>
 </html>
+
