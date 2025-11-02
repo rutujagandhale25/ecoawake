@@ -1,77 +1,58 @@
-// Quiz data
+// Modal open/close
+const modal = document.getElementById("quizModal");
+const btn = document.getElementById("quizBtn");
+const span = document.getElementsByClassName("close")[0];
+btn.onclick = () => (modal.style.display = "block");
+span.onclick = () => (modal.style.display = "none");
+window.onclick = e => { if (e.target == modal) modal.style.display = "none"; };
+
+// Image preview
+const input = document.getElementById("fileInput");
+if (input) {
+  input.addEventListener("change", () => {
+    const file = input.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        document.getElementById("preview").innerHTML = `<img src="${e.target.result}" alt="Eco action">`;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+}
+
+// Word quiz
 const quizData = [
-  {
-    question: "1️⃣ What can you do to reduce plastic pollution?",
-    options: ["Use reusable bottles", "Buy more plastic", "Burn plastics"],
-    correct: 0
-  },
-  {
-    question: "2️⃣ Best way to save energy at home?",
-    options: ["Keep lights on all day", "Use LED bulbs", "Leave devices charging overnight"],
-    correct: 1
-  },
-  {
-    question: "3️⃣ What helps absorb CO₂ from the atmosphere?",
-    options: ["Trees", "Plastic bags", "Cars"],
-    correct: 0
-  },
-  {
-    question: "4️⃣ Which is an eco-friendly mode of transport?",
-    options: ["Walking", "Flying alone", "Driving solo in a car"],
-    correct: 0
-  }
+  { q: "What process converts sunlight into energy in plants?", a: "photosynthesis" },
+  { q: "Which gas do trees absorb?", a: "carbon dioxide" },
+  { q: "What 3 R’s help reduce waste?", a: "reduce reuse recycle" },
+  { q: "Which renewable source powers solar panels?", a: "sun" },
+  { q: "Name one ocean cleanup activity.", a: "beach cleanup" }
 ];
 
-let currentQuestion = 0;
-let score = 0;
-
-function startQuiz() {
-  document.getElementById("quizSection").scrollIntoView({ behavior: "smooth" });
-  showQuestion();
-}
+let current = 0, score = 0;
+const box = document.getElementById("quizBox");
+if (box) showQuestion();
 
 function showQuestion() {
-  const box = document.getElementById("quizBox");
-  if (currentQuestion < quizData.length) {
-    const q = quizData[currentQuestion];
+  if (current < quizData.length) {
     box.innerHTML = `
-      <h3>${q.question}</h3>
-      ${q.options.map((opt, i) => `
-        <div class="quiz-option" onclick="selectOption(${i})">${opt}</div>
-      `).join('')}
+      <p>${quizData[current].q}</p>
+      <input type="text" id="answer" placeholder="Type your answer">
+      <button onclick="checkAnswer()">Check</button>
     `;
   } else {
-    box.innerHTML = `
-      <h3>🎉 Quiz Completed!</h3>
-      <p>You scored ${score} / ${quizData.length}</p>
-      <p>${score === quizData.length ? "🌿 Amazing! You're an Eco Hero!" : "💪 Keep learning and practicing eco-friendly habits!"}</p>
-      <button onclick="restartQuiz()">Restart Quiz</button>
-    `;
+    box.innerHTML = `<h3>Quiz Complete!</h3><p>You scored ${score}/${quizData.length}</p>`;
   }
 }
-
-function selectOption(i) {
-  if (i === quizData[currentQuestion].correct) score++;
-  currentQuestion++;
-  showQuestion();
-}
-
-function restartQuiz() {
-  currentQuestion = 0;
-  score = 0;
-  showQuestion();
-}
-
-// Upload image preview
-const input = document.getElementById('fileInput');
-const preview = document.getElementById('preview');
-input.addEventListener('change', () => {
-  const file = input.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = e => {
-      preview.innerHTML = `<img src="${e.target.result}" alt="Eco photo">`;
-    };
-    reader.readAsDataURL(file);
+function checkAnswer() {
+  const ans = document.getElementById("answer").value.toLowerCase().trim();
+  if (ans && quizData[current].a.includes(ans)) {
+    alert("✅ Correct!");
+    score++;
+  } else {
+    alert("❌ Try again!");
   }
-});
+  current++;
+  showQuestion();
+}
