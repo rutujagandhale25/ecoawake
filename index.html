@@ -1,179 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoSpark – Small Acts, Big Impact</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: #f5fff5;
-      color: #2e4f2e;
-      overflow-x: hidden;
-    }
-
-    header {
-      background-color: #3fa34d;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-
-    header p {
-      font-size: 1.1em;
-      margin-top: 5px;
-      color: #e0ffe0;
-      font-style: italic;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .hero {
-      background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-      animation: fadeIn 1s ease-in;
-    }
-
-    .hero h1 {
-      font-size: 2.8em;
-      margin: 0;
-    }
-
-    .hero p {
-      font-size: 1.3em;
-      margin-top: 15px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      background-color: #3fa34d;
-      color: white;
-      padding: 14px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #2c7a39;
-    }
-
-    .section {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .section h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-    }
-
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 15px;
-      padding: 25px;
-      width: 250px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      color: #3fa34d;
-    }
-
-    footer {
-      background-color: #2e4f2e;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 30px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EcoSpark — Small Acts, Big Impact</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>EcoSpark</h1>
-    <p>“Small Acts, Big Impact”</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="eco-tips.html">Eco Tips</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1 class="brand">EcoSpark</h1>
+        <p class="tagline">Small Acts, Big Impact</p>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="eco-tips.html">Eco Tips</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="hero">
-    <h1>Welcome to EcoSpark</h1>
-    <p>EcoSpark is a movement towards sustainable living and environmental protection. Together, we can create a cleaner, greener world.</p>
-    <a href="eco-tips.html" class="btn">Start Your Green Journey</a>
-  </div>
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h2>Join the movement for a cleaner, greener tomorrow</h2>
+        <p class="lead">EcoSpark is a student-led initiative to spread awareness and inspire action — small acts by many people create big impact.</p>
+        <div class="hero-actions">
+          <a href="eco-tips.html" class="btn">Start Your Green Journey</a>
+          <button id="open-quiz" class="btn ghost">Take a Quick Quiz</button>
+        </div>
+      </div>
+    </section>
 
-  <div class="section">
-    <h2>Our Focus Areas 🌍</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>♻️ Reduce Waste</h3>
-        <p>Encouraging recycling, upcycling, and mindful consumption habits to minimize waste in our environment.</p>
+    <section class="container features">
+      <h3>What We Do</h3>
+      <div class="cards">
+        <article class="card">
+          <h4>Learn</h4>
+          <p>Articles, videos and facts about climate change and eco-friendly living to educate and inform.</p>
+        </article>
+
+        <article class="card">
+          <h4>Challenges</h4>
+          <p>Monthly eco-challenges like “No Plastic Week” or “Plant a Tree Day” to encourage real action.</p>
+        </article>
+
+        <article class="card">
+          <h4>Share</h4>
+          <p>Upload photos of your personal eco-actions and inspire others in the community.</p>
+        </article>
+
+        <article class="card">
+          <h4>Resources</h4>
+          <p>Practical tips, DIY projects, and educational tools to make green living easy.</p>
+        </article>
       </div>
-      <div class="card">
-        <h3>💧 Save Resources</h3>
-        <p>Promoting water conservation, energy efficiency, and responsible usage of natural resources.</p>
+    </section>
+
+    <section class="container campaign">
+      <h3>Campaign Activities</h3>
+      <ul class="campaign-list">
+        <li>Tree plantation drives</li>
+        <li>Beach / park clean-ups</li>
+        <li>Online eco-quiz and contests</li>
+        <li>Awareness posters and short reels on social media</li>
+        <li>Collaboration with schools and NGOs</li>
+      </ul>
+    </section>
+
+    <section class="container outcomes">
+      <h3>Expected Outcomes</h3>
+      <div class="outcome-list">
+        <p>• Increased awareness among students and youth.</p>
+        <p>• Adoption of sustainable practices in daily life.</p>
+        <p>• Reduction in plastic and waste usage.</p>
+        <p>• Community participation and long-term eco habits.</p>
       </div>
-      <div class="card">
-        <h3>🌱 Grow Green</h3>
-        <p>Supporting tree-planting initiatives and spreading awareness about sustainable agriculture and gardening.</p>
-      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 EcoSpark | “Small Acts, Big Impact”</p>
+      <p class="small">Built for a college entrepreneurship project</p>
+    </div>
+  </footer>
+
+  <!-- Quiz & small JS for interactivity -->
+  <div id="quiz-modal" class="modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" id="close-quiz">&times;</button>
+      <h4>EcoQuiz — Quick 3 Question Check</h4>
+      <form id="quiz-form">
+        <ol>
+          <li>
+            How often should you reuse or avoid single-use plastic?
+            <div><label><input type="radio" name="q1" value="correct"> Always/Whenever possible</label></div>
+            <div><label><input type="radio" name="q1" value="wrong"> Only sometimes</label></div>
+          </li>
+          <li>
+            Which action saves energy at home?
+            <div><label><input type="radio" name="q2" value="correct"> Switching off unused lights & unplugging chargers</label></div>
+            <div><label><input type="radio" name="q2" value="wrong"> Keeping appliances on standby</label></div>
+          </li>
+          <li>
+            Best way to reduce food waste?
+            <div><label><input type="radio" name="q3" value="correct"> Plan meals and store leftovers</label></div>
+            <div><label><input type="radio" name="q3" value="wrong"> Throw it away quickly</label></div>
+          </li>
+        </ol>
+        <div class="modal-actions">
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </form>
+      <div id="quiz-result" class="quiz-result" hidden></div>
     </div>
   </div>
 
-  <div class="section" style="background-color:#e9f7ef;">
-    <h2>Get Involved 💚</h2>
-    <p>Join us in our mission to make the world a cleaner and greener place. Every small step counts!</p>
-    <a href="about.html" class="btn">Learn More</a>
-  </div>
+  <script>
+    // modal quiz handlers
+    const openQuizBtn = document.getElementById('open-quiz');
+    const quizModal = document.getElementById('quiz-modal');
+    const closeQuizBtn = document.getElementById('close-quiz');
+    openQuizBtn.addEventListener('click', () => {
+      quizModal.style.display = 'block';
+      quizModal.setAttribute('aria-hidden', 'false');
+    });
+    closeQuizBtn.addEventListener('click', () => {
+      quizModal.style.display = 'none';
+      quizModal.setAttribute('aria-hidden', 'true');
+      document.getElementById('quiz-result').hidden = true;
+      document.getElementById('quiz-form').hidden = false;
+    });
 
-  <footer>
-    <p>© 2025 EcoSpark | “Small Acts, Big Impact”</p>
-  </footer>
+    document.getElementById('quiz-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      let score = 0;
+      if (document.querySelector('input[name="q1"]:checked')?.value === 'correct') score++;
+      if (document.querySelector('input[name="q2"]:checked')?.value === 'correct') score++;
+      if (document.querySelector('input[name="q3"]:checked')?.value === 'correct') score++;
+      const resultDiv = document.getElementById('quiz-result');
+      resultDiv.hidden = false;
+      resultDiv.innerHTML = `<p>You scored ${score}/3. ${score === 3 ? 'Awesome! Keep it up.' : 'Good try — practice these habits!'}</p>`;
+      document.getElementById('quiz-form').hidden = true;
+    });
+
+    // close modal when clicking outside dialog
+    window.addEventListener('click', (e) => {
+      if (e.target === quizModal) {
+        quizModal.style.display = 'none';
+        quizModal.setAttribute('aria-hidden', 'true');
+      }
+    });
+  </script>
 </body>
 </html>
