@@ -1,58 +1,61 @@
-// Modal open/close
-const modal = document.getElementById("quizModal");
-const btn = document.getElementById("quizBtn");
-const span = document.getElementsByClassName("close")[0];
-btn.onclick = () => (modal.style.display = "block");
-span.onclick = () => (modal.style.display = "none");
-window.onclick = e => { if (e.target == modal) modal.style.display = "none"; };
-
-// Image preview
-const input = document.getElementById("fileInput");
-if (input) {
-  input.addEventListener("change", () => {
-    const file = input.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = e => {
-        document.getElementById("preview").innerHTML = `<img src="${e.target.result}" alt="Eco action">`;
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-}
-
-// Word quiz
-const quizData = [
-  { q: "What process converts sunlight into energy in plants?", a: "photosynthesis" },
-  { q: "Which gas do trees absorb?", a: "carbon dioxide" },
-  { q: "What 3 R’s help reduce waste?", a: "reduce reuse recycle" },
-  { q: "Which renewable source powers solar panels?", a: "sun" },
-  { q: "Name one ocean cleanup activity.", a: "beach cleanup" }
+// --- Lightning MCQ Quiz ---
+const mcqData = [
+  {
+    question: "Which of these is a renewable energy source?",
+    options: ["Coal", "Solar Power", "Petroleum", "Natural Gas"],
+    correct: 1
+  },
+  {
+    question: "What should you do to save water at home?",
+    options: ["Leave tap running", "Fix leaks", "Wash car daily", "Use more water"],
+    correct: 1
+  },
+  {
+    question: "Which material is biodegradable?",
+    options: ["Plastic bottle", "Glass jar", "Banana peel", "Aluminum can"],
+    correct: 2
+  }
 ];
 
-let current = 0, score = 0;
-const box = document.getElementById("quizBox");
-if (box) showQuestion();
+let qIndex = 0;
+let points = 0;
 
-function showQuestion() {
-  if (current < quizData.length) {
-    box.innerHTML = `
-      <p>${quizData[current].q}</p>
-      <input type="text" id="answer" placeholder="Type your answer">
-      <button onclick="checkAnswer()">Check</button>
+function startMcqQuiz() {
+  qIndex = 0;
+  points = 0;
+  showMcqQuestion();
+}
+
+function showMcqQuestion() {
+  const quizBox = document.getElementById("quizBox");
+  if (qIndex < mcqData.length) {
+    const q = mcqData[qIndex];
+    quizBox.innerHTML = `
+      <h3>${q.question}</h3>
+      ${q.options.map((opt, i) => `
+        <div class="quiz-option" onclick="selectMcq(${i})">${opt}</div>
+      `).join('')}
     `;
   } else {
-    box.innerHTML = `<h3>Quiz Complete!</h3><p>You scored ${score}/${quizData.length}</p>`;
+    quizBox.innerHTML = `
+      <h3>⚡ Lightning Round Complete!</h3>
+      <p>You got ${points} / ${mcqData.length} correct.</p>
+      <p>${points === 3 ? "🌿 Perfect! You're an Eco Genius!" : "💪 Keep improving — every small step counts!"}</p>
+      <button onclick="startMcqQuiz()">Play Again</button>
+    `;
   }
 }
-function checkAnswer() {
-  const ans = document.getElementById("answer").value.toLowerCase().trim();
-  if (ans && quizData[current].a.includes(ans)) {
-    alert("✅ Correct!");
-    score++;
-  } else {
-    alert("❌ Try again!");
+
+function selectMcq(i) {
+  if (i === mcqData[qIndex].correct) {
+    points++;
   }
-  current++;
-  showQuestion();
+  qIndex++;
+  showMcqQuestion();
 }
+
+// Call this when modal opens
+btn.onclick = () => {
+  modal.style.display = "block";
+  startMcqQuiz();
+};
