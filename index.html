@@ -3,42 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoSpark - Small Acts, Big Impact</title>
+  <title>EcoSpark - Home</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-
   <header>
     <h1>🌿 EcoSpark</h1>
     <p class="tagline">Small Acts, Big Impact</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="learn.html">Learn</a>
+      <a href="challenges.html">Challenges</a>
+      <a href="share.html">Share</a>
+      <a href="join.html">Join Us</a>
+    </nav>
   </header>
 
-  <section class="intro">
+  <section class="home-content fade-in">
     <h2>Welcome to EcoSpark</h2>
-    <p>EcoSpark is a student-driven initiative that inspires people to adopt sustainable living habits through fun challenges, quizzes, and eco-tips. Together, we can make small acts lead to a big impact!</p>
+    <p>EcoSpark is a platform that spreads awareness about sustainable living and environmental protection. Join us in creating a cleaner and greener world.</p>
+
+    <div class="cards">
+      <div class="card" id="challengeCard">
+        <h3>🌱 Challenge of the Month</h3>
+        <p>Join our <strong>No Plastic Week</strong> and share your experience!</p>
+      </div>
+
+      <div class="card">
+        <h3>💡 Small Acts, Big Impact</h3>
+        <p>Switch off lights when not in use — a small act that saves big energy.</p>
+      </div>
+
+      <div class="card" id="quizBtn">
+        <h3>⚡ Take Eco-Awareness Quiz</h3>
+        <p>Test your environmental awareness and see your score instantly!</p>
+      </div>
+
+      <div class="card">
+        <h3>📸 Share Your Eco Actions</h3>
+        <p>Upload photos of your sustainable activities and inspire others.</p>
+      </div>
+    </div>
   </section>
 
-  <section class="main-buttons">
-    <button class="btn">🌱 Challenge of the Month</button>
-    <button class="btn">🌍 Small Acts, Big Impact</button>
-    <button id="quizBtn" class="btn">⚡ Take Eco-Awareness Quiz</button>
-    <button class="btn">📸 Share Your Eco Actions</button>
-  </section>
-
-  <!-- ⚡ Modal Quiz -->
+  <!-- Quiz Modal -->
   <div id="quizModal" class="modal">
     <div class="modal-content">
-      <span id="closeQuiz" class="close">&times;</span>
-      <h2>⚡ Lightning Eco-Awareness Quiz</h2>
-      <div id="quizBox"></div>
+      <span id="closeModal">&times;</span>
+      <h2>Eco-Awareness Quiz</h2>
+      <form id="quizForm">
+        <div class="question">
+          <p>1. What gas do trees absorb from the atmosphere?</p>
+          <label><input type="radio" name="q1" value="a"> Oxygen</label>
+          <label><input type="radio" name="q1" value="b"> Carbon Dioxide</label>
+          <label><input type="radio" name="q1" value="c"> Nitrogen</label>
+        </div>
+
+        <div class="question">
+          <p>2. Which of these is renewable energy?</p>
+          <label><input type="radio" name="q2" value="a"> Coal</label>
+          <label><input type="radio" name="q2" value="b"> Solar</label>
+          <label><input type="radio" name="q2" value="c"> Petroleum</label>
+        </div>
+
+        <div class="question">
+          <p>3. Which practice helps reduce waste?</p>
+          <label><input type="radio" name="q3" value="a"> Recycling</label>
+          <label><input type="radio" name="q3" value="b"> Littering</label>
+          <label><input type="radio" name="q3" value="c"> Burning plastic</label>
+        </div>
+
+        <button type="submit">Submit Quiz</button>
+      </form>
+      <p id="quizResult"></p>
     </div>
   </div>
 
   <footer>
-    <p>© 2025 EcoSpark | Small Acts, Big Impact 🌍</p>
+    <p>© 2025 EcoSpark | Small Acts, Big Impact</p>
   </footer>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
-
